@@ -1,56 +1,55 @@
-# Selenium Python Automation Framework (PyTest + POM)
+# Selenium Web Automation & Testing Framework Suite
 
-A modular, data-driven test automation framework developed in Python using Selenium WebDriver, PyTest, and the Page Object Model (POM) design pattern. This suite automates and validates user authentication and catalog search workflows on the TutorialsNinja e-commerce platform.
-
----
-
-## Key Features
-
-- **Page Object Model (POM):** Decouples test logic from UI locators and interactions for maintainability.
-- **Data-Driven Testing (DDT):** Test suites read dynamic positive and negative datasets directly from external CSV files.
-- **Centralized Configuration:** Environment base URLs, browser targets, and implicit wait thresholds are managed via `config.ini`.
-- **Reusable Utility Layer:** Centralized helper modules handle CSV parsing, configuration extraction, and formatted execution logging.
-- **Robust Synchronization:** Replaced fragile arbitrary pauses with custom Selenium explicit waits (`WebDriverWait` + Expected Conditions).
-- **Automated Failure Capture:** PyTest hook captures full-page browser screenshots on test failure and embeds them into the execution dashboard.
-- **Rich HTML Reporting:** Self-contained execution reports generated via `pytest-html`.
+A comprehensive test automation repository comprising hands-on laboratory modules (Modules 1–4) and an enterprise-grade Capstone Project built using **Python**, **Selenium WebDriver**, **PyTest**, and the **Page Object Model (POM)** architecture.
 
 ---
 
-## Tech Stack & Libraries
+## 👨‍💻 Student Information
 
-- **Language:** Python 3.10+
-- **Browser Engine:** Selenium WebDriver 4.x
-- **Test Runner:** PyTest
-- **Driver Management:** WebDriver Manager (automated binary resolution)
-- **Reporting:** PyTest-HTML
+* **Name:** Aasish Shrestha
+* **Enrollment No:** 12023002001003
+* **Department:** Computer Science & Engineering (Roll No: 33)
+* **Institution:** Institute of Engineering & Management (IEM), Kolkata
+* **Email:** aasish.shrestha2023@iem.edu.in | aasishshrestha2005@gmail.com
 
 ---
 
-## Framework Architecture
+## 📁 Repository Structure
 
 ```text
-├── config/
-│   └── config.ini              # Centralized framework configuration
-├── pages/
-│   ├── __init__.py
-│   ├── base_page.py            # Reusable wrapper around Selenium actions & waits
-│   ├── login_page.py           # Locators and business actions for User Login
-│   └── search_page.py          # Locators and business actions for Product Search
-├── reports/
-│   ├── report.html             # Self-contained HTML execution dashboard
-│   └── screenshots/            # Automated failure screenshots
-├── test_data/
-│   ├── login_data.csv          # Positive and negative credentials
-│   └── search_data.csv         # Valid and invalid catalog queries
-├── tests/
-│   ├── __init__.py
-│   ├── conftest.py             # Fixtures (browser lifecycle) & PyTest reporting hooks
-│   ├── test_login.py           # Data-driven test scenarios for authentication
-│   └── test_search.py          # Data-driven test scenarios for product search
-├── utilities/
-│   ├── __init__.py
-│   ├── custom_logger.py        # Centralized logging formatters
-│   └── read_data.py            # Parsers for CSV files and config.ini
-├── pytest.ini                  # PyTest runtime arguments and paths
-├── requirements.txt            # Project dependencies
+Selenium_submission/
+├── Assignments/
+│   └── Selenium_Assignments/
+│       ├── Module_1_2/           # Locators, multiple elements & CSS child combinators
+│       │   ├── exp1_web_element_identification.py
+│       │   ├── exp2_multiple_element_identification.py
+│       │   ├── exp3_child_nodes_css_part1.py
+│       │   └── exp3_child_nodes_css_part2.py
+│       ├── Module_3/             # Dynamic controls, actions & alert popups
+│       │   ├── exp4_radio_button.py
+│       │   ├── exp5_keyboard_actions.py
+│       │   ├── exp6_mouse_hover.py
+│       │   └── exp7_alerts.py
+│       └── Module_4/             # Text areas, mouse drag & drop interactions
+│           ├── exp8_locate_left_hand_textbox.py
+│           ├── exp9_drag_and_drop.py
+│           └── exp10_write_text_in_box.py
+│
+├── Capstone_project/             # Scalable POM Automation Framework
+│   ├── config/                   # Global configuration management (config.ini)
+│   ├── pages/                    # Encapsulated Web Element locators and page actions
+│   │   ├── base_page.py          # Reusable WebDriver explicit wait wrappers
+│   │   ├── home_page.py          # Header, navigation, and global search actions
+│   │   ├── login_page.py         # Login form interactions and authentication checks
+│   │   ├── register_page.py      # Account registration workflow
+│   │   ├── search_results_page.py# Search listing validations and assertions
+│   │   └── account_page.py       # User dashboard and session teardown
+│   ├── test_data/                # Parameterized CSV test records (login_data, search_data)
+│   ├── tests/                    # PyTest test suites and fixtures (conftest.py)
+│   ├── utilities/                # Helper utilities (CSV reader, screenshots, reporters)
+│   └── reports/                  # Generated HTML test execution reports
+│
+├── Certificates/                 # Course completion credentials
+├── requirements.txt              # Framework dependencies
+├── pytest.ini                    # PyTest CLI flags and marker declarations
 └── README.md
